@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  title="List of tasks">
+        <div class="mytable" style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={taskArray}
+                    columns={columns}
+                    onrowaction={callRowAction}
+                    hide-checkbox-column
+                    >
+            </lightning-datatable>
+        </div>
+
+    </lightning-card>
+    
+</template>

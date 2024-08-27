@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <!-- <lightning-button onclick={handleClick} label="New" slot="actions"></lightning-button> -->
+        <lightning-tabset>
+            <lightning-tab label="Create Tasks">
+                <c-create-task lwc:ref="createTodo" onupdate={handleUpdateTasks} task-array={taskArray}></c-create-task>
+            </lightning-tab>
+            <lightning-tab label="Uncompleted Tasks">
+                <c-task-list ontaskaction={removeFromTask} ontaskdelete={deleteTask} task-array={taskArray} ></c-task-list>
+            </lightning-tab>
+            <lightning-tab label="Completed Tasks">
+                <lightning-record-form object-api-name="Todo__c" layout-type="Full" columns="2">
+                
+                </lightning-record-form>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

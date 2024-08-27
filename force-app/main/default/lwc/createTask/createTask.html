@@ -1,0 +1,12 @@
+<template>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" name="taskName" value={titleTask} label="Task Title" onchange={handleOnChange} required></lightning-input>
+            <template lwc:if={showDueDate}>
+                <lightning-input type="date" name="dueDate" value={dueDate} label="Due date" onchange={handleOnChange} required></lightning-input>
+            </template>
+            <br/>
+            <template lwc:if={showSaveBtn}>
+                <lightning-button variant="success" label="Save Task" title="Save" onclick={saveTask} class="slds-m-left_x-small makeItTransparent"></lightning-button>
+            </template>
+        </div>
+</template>
